@@ -15,17 +15,19 @@ const fields = {
 let zakatPercentage = 2.5; // Default percentage for Hijri
 
 function calculateTotalMoney() {
-const cash = parseFloat(removeCommas(fields.cash.value)) || 0;
-const tradingGoods = parseFloat(removeCommas(fields.tradingGoods.value)) || 0;
-const debts = parseFloat(removeCommas(fields.debts.value)) || 0;
-const liabilities = parseFloat(removeCommas(fields.liabilities.value)) || 0;
+    const cash = parseFloat(removeCommas(fields.cash.value)) || 0;
+    const tradingGoods = parseFloat(removeCommas(fields.tradingGoods.value)) || 0;
+    const debts = parseFloat(removeCommas(fields.debts.value)) || 0;
+    const liabilities = parseFloat(removeCommas(fields.liabilities.value)) || 0;
 
-if (fields.cash.value || fields.tradingGoods.value || fields.debts.value || fields.liabilities.value) {
-    return (cash + tradingGoods + debts - liabilities).toFixed(2);
-} else {
-    return '';
+    // Calculate total money (allowing negative values)
+    const total = cash + tradingGoods + debts - liabilities;
+
+    // Return the total, formatted to two decimal places
+    return total.toFixed(2);
 }
-}
+
+
 
 function calculateNisab() {
 const goldPrice = parseFloat(removeCommas(fields.goldPrice.value)) || 0;
@@ -48,18 +50,19 @@ if (totalMoney && nisab) {
 return '';
 }
 
-function updateValues() 
-{
-const totalMoney = calculateTotalMoney();
-const nisab = calculateNisab();
+function updateValues() {
+    const totalMoney = calculateTotalMoney();
+    const nisab = calculateNisab();
 
-// Format with commas before displaying
-fields.totalMoney.value = totalMoney ? formatNumberWithCommas({ value: totalMoney }) : '';
-fields.nisab.value = nisab ? formatNumberWithCommas({ value: nisab }) : '';
+    // Format with commas and display all numbers, including negatives
+    fields.totalMoney.value = totalMoney !== '' ? formatNumberWithCommas(totalMoney) : '';
+    fields.nisab.value = nisab !== '' ? formatNumberWithCommas(nisab) : '';
 
-const zakatAmount = calculateZakat(totalMoney, nisab);
-fields.zakatAmount.value = zakatAmount;
+    const zakatAmount = calculateZakat(totalMoney, nisab);
+    fields.zakatAmount.value = formatNumberWithCommas(zakatAmount);
 }
+
+
 
 
 fields.hijri.addEventListener('change', function () 
@@ -92,17 +95,28 @@ field.value = parts.join('.'); // Combine integer and decimal parts
 
 
 function formatNumberWithCommas(fieldOrValue) {
-// If input is a field object, extract its value
-let value = typeof fieldOrValue === 'object' ? fieldOrValue.value : fieldOrValue;
+    // If input is a field object, extract and format its value
+    let value = typeof fieldOrValue === 'object' ? fieldOrValue.value : fieldOrValue;
 
-// Remove non-numeric characters (except '.')
-value = value.replace(/[^0-9.]/g, '');
+    // Handle negative values
+    const isNegative = value.startsWith('-');
+    value = value.replace(/[^0-9.]/g, ''); // Remove non-numeric characters (except '.')
+    
+    // Split integer and decimal parts
+    const parts = value.split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); // Add commas to integer part
 
-// Split integer and decimal parts and format
-const parts = value.split('.');
-parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-return parts.join('.');
+    const formattedValue = (isNegative ? '-' : '') + parts.join('.');
+
+    // If input is a field object, set the formatted value back to the field
+    if (typeof fieldOrValue === 'object') {
+        fieldOrValue.value = formattedValue;
+    }
+
+    return formattedValue;
 }
+
+
 
 
 function removeCommas(value) {
@@ -111,9 +125,9 @@ return value.replace(/,/g, ''); // Remove all commas
 
 
 Object.values(fields).forEach(field => {
-field.addEventListener('input', function () {
-validateInput(field);
-formatNumberWithCommas(field); // Apply formatting
-updateValues(); // Recalculate values dynamically
-});
+    field.addEventListener('input', function () {
+        validateInput(field);
+        formatNumberWithCommas(field); // Format the input value with commas
+        updateValues(); // Recalculate values dynamically
+    });
 });

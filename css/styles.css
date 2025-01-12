@@ -1,4 +1,10 @@
 /* General Styles */
+@font-face {
+    font-family: 'Cairo';
+    src: url('../assets/fonts/Cairo.tff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
     font-family: 'Cairo', sans-serif;
     margin: 0;

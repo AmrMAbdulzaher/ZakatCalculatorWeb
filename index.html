@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>حاسبة الزكاة</title>
-    <link rel="icon" href="/imgs/app.ico" type="image/icon type">
+    <link rel="icon" href="assets/imgs/app.ico" type="image/icon type">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -19,30 +19,41 @@
             <label for="cash">النقدية:</label>
             <div class="tooltip-container">
                 <input type="text" id="cash" placeholder="- قم بإدخال قيمة النقدية هنا -">
-                <span class="tooltip-text">النقدية من عملات محلية وأجنبية ومال بالبنك...</span>
+                <span class="tooltip-text">
+                    النقدية من عملات محلية وأجنبية ومال بالبنك
+                    والخزينة وذهب أو فضة بغرض الإدخار
+                    وعوائد البنوك الاسلامية المتبقية وباقي
+                    المرتب وباقي دخل الايجارات .. الخ
+                </span>
             </div>
         
             <label for="trading_goods">عروض التجارة:</label>
             <div class="tooltip-container">
                 <input type="text" id="trading_goods" placeholder="- قم بإدخال قيمة عروض التجارة هنا -">
-                <span class="tooltip-text">القيمة السوقية لكل ما تملكه على سبيل التجارة...</span>
+                <span class="tooltip-text">
+                    القيمة السوقية لكل ما تملكه على سبيل التجارة أي لغرض البيع
+                </span>
             </div>
         
             <label for="debts">ديون مستحقة لك:</label>
             <div class="tooltip-container">
                 <input type="text" id="debts" placeholder="- قم بإدخال قيمة الديون التي لك هنا -">
-                <span class="tooltip-text">الديون الجيدة المستحقة لك...</span>
+                <span class="tooltip-text">
+                    الديون الجيدة المستحقة لك والتي يغلب على ظنك تحصيلها في موعدها
+                </span>
             </div>
         
             <label for="liabilities">إلتزامات وديون عليك:</label>
             <div class="tooltip-container">
                 <input type="text" id="liabilities" placeholder="- قم بإدخال قيمة الإلتزامات والديون عليك -">
-                <span class="tooltip-text">الخصوم من مصروفات وأقساط...</span>
+                <span class="tooltip-text">
+                    الخصوم من مصروفات وأقساط لسنة الحول وديون مستحقة عليك عند الغير
+                </span>
             </div>
 
             <label for="total_zakat">وعاء الزكاة:</label>
             <div class="tooltip-container">
-                <input type="text" id="total_zakat" class="readonly" readonly placeholder="0.00">
+                <input type="text" id="total_zakat" class="readonly" readonly placeholder="0.00" style="direction: ltr;">
                 <span class="tooltip-text">وعاء الزكاة = الأموال الزكوية - الخصوم</span>
             </div>
         </div>
@@ -65,16 +76,15 @@
 
         <!-- حساب الزكاة Section -->
         <div class="section">
-            <h2>حساب الزكاة</h2>
             <label>طريقة الحساب:</label>
-            <div style="display: flex; gap: 10px;">
-                <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+                <div style="display: flex; align-items: center; gap: 8px; line-height: 1;">
                     <input type="radio" id="hijri" name="zakat_method" value="hijri" checked>
-                    <label for="hijri">حول هجري</label>
+                    <label for="hijri" style="font-size: 12px;">حول هجري</label>
                 </div>
-                <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px; line-height: 1;">
                     <input type="radio" id="miladi" name="zakat_method" value="miladi">
-                    <label for="miladi">حول ميلادي</label>
+                    <label for="miladi" style="font-size: 12px;">حول ميلادي</label>
                 </div>
             </div>
 
