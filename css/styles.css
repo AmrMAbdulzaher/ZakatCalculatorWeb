@@ -137,6 +137,13 @@ button:hover {
     white-space: normal;
 }
 
+.section div {
+    display: flex;
+    justify-content: center;  /* Center the radio buttons horizontally */
+    gap: 10px;
+    align-items: center;
+}
+
 .tooltip-text::after {
     content: '';
     position: absolute;

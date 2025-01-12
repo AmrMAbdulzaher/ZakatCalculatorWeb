@@ -78,36 +78,35 @@
         <hr>
 
         <!-- حساب الزكاة Section -->
-        <div class="section">
-            <label>طريقة الحساب:</label>
-            <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
-                <div style="display: flex; align-items: center; gap: 8px; line-height: 1;">
-                    <input type="radio" id="hijri" name="zakat_method" value="hijri" checked>
-                    <label for="hijri" style="font-size: 12px;">
-                        حول هجري
-                        <span class="icon-tooltip">
-                            <i class="fas fa-question-circle"></i> 
-                            <span class="icon-tooltip-text">قيمة الزكاة لحول هجري (سنة كاملة) = وعاء الزكاة × 2.5%</span>
-                        </span>
-                    </label>
-                    
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px; line-height: 1;">
-                    <input type="radio" id="miladi" name="zakat_method" value="miladi">
-                    <label for="miladi" style="font-size: 12px;">
-                        حول ميلادي
-                        <span class="icon-tooltip">
-                            <i class="fas fa-question-circle"></i> 
-                            <span class="icon-tooltip-text">قيمة الزكاة لحول ميلادي (سنة كاملة) = وعاء الزكاة × 2.577%</span>
-                        </span>
-                    </label>
-                </div>
-            </div>
-
-            <label for="zakat_amount">قيمة الزكاة:</label>
-            <input type="text" id="zakat_amount" class="readonly" readonly placeholder="ستظهر لك القيمة عند حساب وعاء الزكاة والنِصاب" style="direction: ltr;">
+    <div class="section">
+    <label>طريقة الحساب:</label>
+    <div>
+        <div style="display: flex; align-items: center; gap: 8px; line-height: 1;">
+            <input type="radio" id="hijri" name="zakat_method" value="hijri" checked>
+            <label for="hijri" style="font-size: 12px;">
+                حول هجري
+                <span class="icon-tooltip">
+                    <i class="fas fa-question-circle"></i> 
+                    <span class="icon-tooltip-text">قيمة الزكاة لحول هجري (سنة كاملة) = وعاء الزكاة × 2.5%</span>
+                </span>
+            </label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; line-height: 1;">
+            <input type="radio" id="miladi" name="zakat_method" value="miladi">
+            <label for="miladi" style="font-size: 12px;">
+                حول ميلادي
+                <span class="icon-tooltip">
+                    <i class="fas fa-question-circle"></i> 
+                    <span class="icon-tooltip-text">قيمة الزكاة لحول ميلادي (سنة كاملة) = وعاء الزكاة × 2.577%</span>
+                </span>
+            </label>
         </div>
     </div>
+
+    <label for="zakat_amount">قيمة الزكاة:</label>
+    <input type="text" id="zakat_amount" class="readonly" readonly placeholder="ستظهر لك القيمة عند حساب وعاء الزكاة والنِصاب" style="direction: ltr;">
+    </div>
+
 
     <script src="js/script.js"></script>
 </body>
