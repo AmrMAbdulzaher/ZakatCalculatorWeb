@@ -1,16 +1,16 @@
 /* General Styles */
 @font-face {
     font-family: 'Cairo';
-    src: url('../assets/fonts/Cairo.tff') format('truetype');
+    src: url('../assets/fonts/Cairo.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 body {
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Cairo', sans-serif;  /* Use Cairo font for the body */
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
-    direction: rtl;
+    direction: rtl;  /* Right to left direction for Arabic */
 }
 
 .container {
