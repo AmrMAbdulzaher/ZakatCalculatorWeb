@@ -137,12 +137,24 @@ button:hover {
     white-space: normal;
 }
 
+
+
+/* Style for the radio button section, make sure it stays on the same line */
 .section div {
     display: flex;
-    justify-content: center;  /* Center the radio buttons horizontally */
-    gap: 10px;
-    align-items: center;
+    justify-content: center;  /* Align all the radio buttons horizontally */
+    align-items: center;      /* Ensure the radio buttons are vertically aligned */
+    gap: 20px;  /* Space between the radio buttons */
 }
+
+/* Make sure each radio button and label are aligned in a row */
+.section div > div {
+    display: flex;
+    align-items: center; /* Vertically align the radio button with the label */
+    gap: 8px;  /* Space between the radio button and label */
+}
+
+
 
 .tooltip-text::after {
     content: '';
