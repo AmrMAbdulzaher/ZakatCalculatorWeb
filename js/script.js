@@ -313,14 +313,3 @@ function scrollUp() {
   // Run the update function on page load and when scrolling
   window.onload = updateScrollButtons;
   window.onscroll = updateScrollButtons;
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const speedInsightsElement = document.getElementById('speed-insights');
-    if (speedInsightsElement) {
-      const speedInsights = new SpeedInsights(speedInsightsElement, {
-        // Add configuration options if needed
-      });
-      speedInsights.run();
-    }
-  });
-  
