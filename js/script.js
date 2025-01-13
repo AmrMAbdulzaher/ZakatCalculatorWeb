@@ -181,6 +181,21 @@ function removeCommas(value) {
 
 function validateInput(field) {
     let value = field.value;
+    const arabicToWesternMap = {
+        '٠': '0',
+        '١': '1',
+        '٢': '2',
+        '٣': '3',
+        '٤': '4',
+        '٥': '5',
+        '٦': '6',
+        '٧': '7',
+        '٨': '8',
+        '٩': '9'
+    };
+
+    // Replace Eastern Arabic numerals with Western numerals
+    value = value.replace(/[٠-٩]/g, char => arabicToWesternMap[char]);
     value = value.replace(/[^0-9.]/g, ''); // Remove non-numeric characters except for the dot
     const parts = value.split('.');
 
