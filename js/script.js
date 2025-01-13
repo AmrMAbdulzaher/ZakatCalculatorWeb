@@ -195,8 +195,18 @@ function validateInput(field) {
     };
 
     // Replace Eastern Arabic numerals with Western numerals
-    value = value.replace(/[٠-٩]/g, char => arabicToWesternMap[char]);
-    value = value.replace(/[^0-9.]/g, ''); // Remove non-numeric characters except for the dot
+    // Replace Eastern Arabic numerals with Western Arabic numerals
+    value = value.replace(/[٠-٩]/g, (char) => arabicToWesternMap[char]);
+
+    // Debug: Log the transformed value
+    console.log('Converted Value:', value);
+
+    // Remove non-numeric characters except the dot
+    value = value.replace(/[^0-9.]/g, '');
+
+    // Debug: Log after removing unwanted characters
+    console.log('After Removing Invalid Characters:', value);
+    
     const parts = value.split('.');
 
     if (parts.length > 2) {
