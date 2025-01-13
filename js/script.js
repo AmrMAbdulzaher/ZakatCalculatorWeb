@@ -1,3 +1,7 @@
+import { injectSpeedInsights } from '@vercel/speed-insights';
+
+injectSpeedInsights();
+
 const fields = {
     cash: document.getElementById('cash'),
     tradingGoods: document.getElementById('trading_goods'),
