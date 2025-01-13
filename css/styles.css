@@ -5,10 +5,11 @@
     font-weight: normal;
     font-style: normal;
 }
+
 body {
     display: flex;
-    justify-content: center; /* Horizontally center the container */
-    align-items: center; /* Vertically center the container */
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     font-family: 'Cairo', sans-serif;
@@ -18,45 +19,44 @@ body {
 }
 
 input, textarea {
-    user-select: text; /* Allow text selection in input fields */
+    user-select: text;
 }
 
 .logo-container {
-    text-align: center; /* Center the logo */
-    margin-bottom: 0px; /* Space below the logo */
-    user-select: none; /* Prevent image selection */
+    text-align: center;
+    margin-bottom: 0px;
+    user-select: none;
     pointer-events: none;
 }
 
 .logo {
-    max-width: 70px; /* Adjust width to fit your design */
-    height: auto; /* Keep aspect ratio of the image */
-    margin-bottom: 0px; /* Space below the logo */
+    max-width: 70px;
+    height: auto;
+    margin-bottom: 0px;
 }
 
 h1 {
-    margin-top: 0px;  /* Adjust top margin of the title */
-    margin-bottom: 0px;  /* Adjust top margin of the title */
-
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .subtitle {
-    margin-top: 0px; /* Space below the logo */
+    margin-top: 0px;
 }
+
 * {
-    box-sizing: border-box; /* Ensures padding and borders are included in width */
+    box-sizing: border-box;
 }
 
 .container {
     width: 100%;
-    max-width: 500px;
+    max-width: 1200px;
     margin: 20px auto;
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    overflow: hidden; /* Prevents any overflow of the container */
-
+    overflow: hidden;
 }
 
 h1 {
@@ -79,7 +79,7 @@ label {
 }
 
 input[type="text"] {
-    width: 95%;
+    width: 100%;
     padding: 8px;
     font-family: 'Cairo', sans-serif;
     margin-bottom: 15px;
@@ -89,7 +89,6 @@ input[type="text"] {
     font-size: 14px;
     text-align: center;
 }
-
 
 .readonly {
     background-color: #e9ecef;
@@ -137,25 +136,6 @@ button:hover {
     white-space: normal;
 }
 
-
-
-/* Style for the radio button section, make sure it stays on the same line */
-.section div {
-    display: flex;
-    justify-content: center;  /* Align all the radio buttons horizontally */
-    align-items: center;      /* Ensure the radio buttons are vertically aligned */
-    gap: 20px;  /* Space between the radio buttons */
-}
-
-/* Make sure each radio button and label are aligned in a row */
-.section div > div {
-    display: flex;
-    align-items: center; /* Vertically align the radio button with the label */
-    gap: 8px;  /* Space between the radio button and label */
-}
-
-
-
 .tooltip-text::after {
     content: '';
     position: absolute;
@@ -172,21 +152,20 @@ button:hover {
     opacity: 1;
 }
 
-/* Unique styling for icon tooltips */
 .icon-tooltip {
     position: relative;
-    margin-left: 8px; /* Space between text and icon */
+    margin-left: 8px;
     cursor: pointer;
 }
 
 .icon-tooltip i {
-    font-size: 16px; /* Icon size */
-    color: #333; /* Icon color */
+    font-size: 16px;
+    color: #333;
 }
 
 .icon-tooltip-text {
     visibility: hidden;
-    width: 120px; /* Adjust width for icon tooltip */
+    width: 120px;
     background-color: #555;
     color: #fff;
     text-align: center;
@@ -196,7 +175,7 @@ button:hover {
     z-index: 1;
     bottom: 125%;
     left: 25%;
-    margin-left: -60px; /* Center the tooltip */
+    margin-left: -60px;
     opacity: 0;
     transition: opacity 0.3s;
     line-height: 1.6;
@@ -217,176 +196,112 @@ button:hover {
     visibility: visible;
     opacity: 1;
 }
+
 input[type="radio"] + label {
     font-size: 12px;
     color: #333;
 }
 
-/* Small Mobile screens (320px and below) */
-@media (max-width: 320px) {
-    .container {
-        padding: 6px;
-        margin: 3px;
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 14px; /* Smaller title for tiny screens */
-    }
-
-    .subtitle {
-        font-size: 10px;
-    }
-
-    label {
-        font-size: 10px; /* Reduce font size on small screens */
-    }
-
-    input[type="text"] {
-        font-size: 12px; /* Smaller input text size */
-        padding: 6px; /* Less padding for smaller screens */
-        width: 100%; /* Full width inputs */
-    }
-
-    button {
-        font-size: 10px; /* Smaller button font */
-        padding: 8px; /* Less padding for small screens */
-    }
-
-    .tooltip-text {
-        width: 180px; /* Narrower tooltips for very small screens */
-        font-size: 12px;
-    }
-
-    .icon-tooltip-text {
-        width: 180px; /* Smaller tooltip width */
-        font-size: 12px;
-    }
-
-    /* Stack radio buttons vertically on small screens */
-    input[type="radio"] + label {
-        font-size: 12px;
-    }
-    
-    .section {
-        margin-bottom: 15px; /* Reduce margin between sections */
-    }
-
-    /* Flex container for radio buttons becomes column layout on smaller screens */
-    .section div {
-        display: block;
-    }
+/* Two Fields One Line */
+.two-fields-one-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
 }
 
-/* For larger Mobile Screens (Portrait) */
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-        margin: 5px;
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 16px; /* Slightly larger title */
-    }
-
-    .subtitle {
-        font-size: 12px;
-    }
-
-    label {
-        font-size: 12px;
-    }
-
-    input[type="text"] {
-        font-size: 14px;
-        padding: 8px; /* More padding for easier input */
-        width: 100%; /* Full width input on small screens */
-    }
-
-    button {
-        font-size: 12px;
-        padding: 10px;
-    }
-
-    .tooltip-text {
-        width: 200px; /* Adjust tooltip width */
-        font-size: 12px;
-    }
-
-    .icon-tooltip-text {
-        width: 200px; /* Icon tooltips also adjust */
-        font-size: 12px;
-    }
-
-    /* Stack radio buttons vertically for small devices */
-    .section div {
-        display: block;
-    }
-
-    .section {
-        margin-bottom: 20px; /* Give more space between sections */
-    }
+.two-fields-one-line .field {
+    width: 48%;
 }
 
-/* For Tablets and Small Laptops (up to 768px) */
-@media (max-width: 768px) {
+/* Centered Field One Line */
+.centered {
+    display: flex;
+    flex-direction: column;  /* Stack label and input vertically */
+    justify-content: right;
+    align-items: right;  /* Center both horizontally */
+    width: 100%;
+}
+
+.centered label {
+    text-align: right;
+    margin-bottom: 8px;   /* Add space between the label and input */
+}
+
+.centered input {
+    width: 100%;           /* Adjust width of the input field */
+    text-align: center;   /* Keep input text centered */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
     .container {
         padding: 15px;
-        margin: 10px;
-        width: 100%;
     }
 
+    .two-fields-one-line {
+        flex-direction: column;
+    }
+
+    .two-fields-one-line .field {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    .two-fields-one-line {
+        flex-direction: column;
+    }
+
+    .two-fields-one-line .field {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
     h1 {
         font-size: 18px;
     }
 
-    .subtitle {
-        font-size: 14px;
-    }
-
-    label {
-        font-size: 14px;
+    .container {
+        margin: 5px;
+        padding: 10px;
     }
 
     input[type="text"] {
-        font-size: 16px;
-        padding: 10px; /* Larger padding on tablet screens */
-        width: 100%;
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 12px;
     }
 
     button {
         font-size: 14px;
-        padding: 12px;
+        padding: 8px;
     }
 
     .tooltip-text {
-        width: 250px; /* Tooltip width adjustment */
-        font-size: 12px;
+        width: 200px;
     }
 
     .icon-tooltip-text {
-        width: 250px; /* Icon tooltip adjustment */
-        font-size: 12px;
+        width: 100px;
     }
-
-    .section {
-        margin-bottom: 25px; /* Give more spacing on tablet devices */
-    }
-}
-
-@keyframes pulse {
-    0% {
-        background-color: #e9ecef;
-    }
-    50% {
-        background-color: #d1d1d1;
-    }
-    100% {
-        background-color: #e9ecef;
-    }
-}
-
-.readonly-updated {
-    animation: pulse 1s ease-in-out;
 }

@@ -194,7 +194,6 @@ function validateInput(field) {
         '٩': '9'
     };
 
-    // Replace Eastern Arabic numerals with Western numerals
     // Replace Eastern Arabic numerals with Western Arabic numerals
     value = value.replace(/[٠-٩]/g, (char) => arabicToWesternMap[char]);
 
@@ -224,4 +223,14 @@ function validateInput(field) {
     }
 
     field.value = value;
+}
+
+function clearAll() {
+    Object.values(fields).forEach(field => {
+        if (field.tagName === 'INPUT' && field.type === 'text') {
+            field.value = '';
+        }
+    });
+    fields.hijri.checked = true; // Reset to default method
+    zakatPercentage = 2.5;
 }
