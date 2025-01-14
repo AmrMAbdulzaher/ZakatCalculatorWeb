@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
     <div class="container">
         <div class="logo-container">
             <img src="assets/imgs/app.png" alt="Logo" class="logo">
@@ -17,10 +16,10 @@
         <h1>حاسبة الزكاة</h1>
         <div class="subtitle">احسب الزكاة من أموالك بسهولة</div>
     
-        <!-- وعاء الزكاة Section -->
+        <!-- TotalMoney Section -->
         <div class="section">
             <hr>
-            <div class="two-fields-one-line">
+            <div class="many-fields-one-line">
                 <div class="field">
                     <label for="cash">النقدية:</label>
                     <div class="tooltip-container">
@@ -45,7 +44,7 @@
                 </div>
             </div>
             
-            <div class="two-fields-one-line">
+            <div class="many-fields-one-line">
                 <div class="field">
                     <label for="debts">ديون مستحقة لك:</label>
                     <div class="tooltip-container">
@@ -75,10 +74,10 @@
             </div>
         </div>
     
-        <!-- نصاب الزكاة Section -->
+        <!-- Nisab Section -->
         <div class="section">
             <hr>
-            <div class="two-fields-one-line">
+            <div class="many-fields-one-line">
                 <div class="field">
                     <label for="gold_price">قيمة جرام ذهب عيار 24:</label>
                     <div class="tooltip-container">
@@ -98,7 +97,7 @@
     
         <hr>
     
-        <!-- حساب الزكاة Section -->
+        <!-- Zakat Amount Section -->
         <div class="section">
             <label>طريقة الحساب:</label>
             <div class="method-section">
@@ -129,20 +128,19 @@
             </div>
         </div>
 
-        
-        <div class="two-fields-one-line">
+        <!-- Buttons -->
+        <div class="many-fields-one-line">
             <button class="tip-button" id="tip1" onclick="openModal('tip1')">النية</button>
             <button class="tip-button" id="tip2" onclick="openModal('tip2')">مصارف الزكاة</button>
             <button class="clear-button" id="clearAllBtn" color="red" onclick="clearAll()">أمسح الكل</button>
         </div>
 
         <div class="buttons-container">
-            <!-- Up and Down Arrow Buttons -->
             <button class="scroll-button" id="scrollUpBtn" onclick="scrollUp()">↑</button>
             <button class="scroll-button" id="scrollDownBtn" onclick="scrollDown()">↓</button>
         </div>
 
-          <div id="tipModal" class="modal" style="display: none;">
+        <div id="tipModal" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <br>
@@ -152,13 +150,8 @@
             </div>
         </div>
           
+    </div> 
 
-</div>
-    
-    
-
-
-
-    <script src="js/script.min.js"></script>
+<script src="js/script.min.js"></script>
 </body>
 </html>
