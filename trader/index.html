@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> حاسبة الزكاة - تاجر</title>
-    <link rel="icon" href="assets/imgs/app.ico" type="image/icon type">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="../assets/imgs/app.ico" type="image/icon type">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
     <div class="container">
         <div class="logo-container">
-            <img src="assets/imgs/app.png" alt="Logo" class="logo">
+            <img src="../assets/imgs/app.png" alt="Logo" class="logo">
         </div>
         <h1>حاسبة الزكاة</h1>
         <div class="subtitle">احسب الزكاة من أموالك بسهولة</div>
@@ -130,19 +130,19 @@
         </div>
 
         <div class="two-fields-one-line">
-            <button class="clear-button" id="clearAllBtn" onclick="clearAll()">أمسح الكل</button>
-            <button class="exit-button" id="exitBtn" onclick="location.href='../index.html';">رجوع للصفحة الرئيسية</button>
+            <button class="clear-button" id="clearAllBtn" onclick="clearAll()"> <i class="fa-solid fa-trash-can"></i> أمسح الكل</button>
+            <button class="exit-button" id="exitBtn" onclick="location.href='../index.html';"> <i class="fa-solid fa-house"></i> رجوع للصفحة الرئيسية</button>
         </div>
         
         <div class="two-fields-one-line">
-            <button class="tip-button" id="tip1" onclick="openModal('tip1')">النية</button>
-            <button class="tip-button" id="tip2" onclick="openModal('tip2')">مصارف الزكاة</button>
+            
+            <button class="tip-button" id="tip1" onclick="openModal('tip1')"> <i class="fas fa-exclamation-circle"></i>   النية</button>
+            <button class="tip-button" id="tip2" onclick="openModal('tip2')"> <i class="fas fa-exclamation-circle"></i>   مصارف الزكاة</button>
         </div>
-
         <div class="buttons-container">
             <!-- Up and Down Arrow Buttons -->
-            <button class="scroll-button" id="scrollUpBtn" onclick="scrollUp()">↑</button>
-            <button class="scroll-button" id="scrollDownBtn" onclick="scrollDown()">↓</button>
+            <button class="scroll-button" id="scrollUpBtn" onclick="scrollUp()"><i class="fa-solid fa-up-long"></i></button>
+            <button class="scroll-button" id="scrollDownBtn" onclick="scrollDown()"><i class="fa-solid fa-down-long"></i></button>
         </div>
 
           <div id="tipModal" class="modal" style="display: none;">
@@ -151,7 +151,7 @@
                 <br>
                 <h2 id="modalTitle" style="text-align: center;"></h2>
                 <p id="modalText"></p>
-               <button class ="button" onclick="closeModal()">إغلاق</button>
+               <button class ="exit-button" onclick="closeModal()"> <i class="fas fa-sticky-note"></i> إغلاق</i></button>
             </div>
         </div>
           
@@ -162,6 +162,6 @@
 
 
 
-    <script src="js/script.js"></script>
+    <script src="../js/script.min.js"></script>
 </body>
 </html>
