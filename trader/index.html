@@ -139,29 +139,31 @@
             <button class="tip-button" id="tip1" onclick="openModal('tip1')"> <i class="fas fa-exclamation-circle"></i>   النية</button>
             <button class="tip-button" id="tip2" onclick="openModal('tip2')"> <i class="fas fa-exclamation-circle"></i>   مصارف الزكاة</button>
         </div>
+            
         <div class="buttons-container">
-            <!-- Up and Down Arrow Buttons -->
             <button class="scroll-button" id="scrollUpBtn" onclick="scrollUp()"><i class="fa-solid fa-up-long"></i></button>
             <button class="scroll-button" id="scrollDownBtn" onclick="scrollDown()"><i class="fa-solid fa-down-long"></i></button>
         </div>
 
-          <div id="tipModal" class="modal" style="display: none;">
+        <div id="tipModal" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <br>
                 <h2 id="modalTitle" style="text-align: center;"></h2>
                 <p id="modalText"></p>
-               <button class ="exit-button" onclick="closeModal()"> <i class="fas fa-sticky-note"></i> إغلاق</i></button>
+               <button class ="exit-button" onclick="closeModal()"> <i class="fa-solid fa-circle-xmark"></i> إغلاق</i></button>
             </div>
         </div>
           
-
+        <footer class="footer">
+            .Created with love ♥ by <strong>Amr Mohamed</strong> from Egypt
+        </footer>
 </div>
     
     
 
 
 
-    <script src="../js/script.min.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
